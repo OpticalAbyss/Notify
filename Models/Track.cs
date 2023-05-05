@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NotifyWebApp.Models
 {
@@ -6,6 +7,9 @@ namespace NotifyWebApp.Models
     {
         [Key]
         public int ID { get; set; }
+
+        [ForeignKey("Artist")]
+        public int ArtistID { get; set; } 
 
         [Required]
         public string Name { get; set; }

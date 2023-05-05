@@ -10,12 +10,15 @@ namespace NotifyWebApp.Models
         [Required]
         public string Name { get; set; }
 
-        [Key]
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required]        
         public string Password { get; set; }
 
         public string Image { get; set; }
+
+        public bool isAdmin { get; set; }
     }
 }

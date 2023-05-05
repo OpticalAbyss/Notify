@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
 
 namespace NotifyWebApp.Models
@@ -14,7 +15,9 @@ namespace NotifyWebApp.Models
         public DateTime ReleaseDate { get; set; }
 
         //Foreign Key
+        [ForeignKey("Artist")]
         public string Atrist { get; set; }
+        public Artist Artist { get; set; } 
 
         public string Image { get; set; }
     }

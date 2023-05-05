@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NotifyWebApp.Models
 {
@@ -13,6 +14,8 @@ namespace NotifyWebApp.Models
         public string Image { get; set; }
 
         [Required]
+        [ForeignKey("User")]
         public int User_ID { get; set; }
+        public User User { get; set; }  
     }
 }
