@@ -16,7 +16,7 @@ namespace NotifyWebApp.Models
 
         //Foreign Key
         [ForeignKey("Artist")]
-        public string Atrist { get; set; }
+        public int Atrist_ID { get; set; }
         public Artist Artist { get; set; } 
 
         public string Image { get; set; }
