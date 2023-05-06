@@ -84,9 +84,24 @@
     </div>
 </div>
 
-<div class="spotify-playlistsS">
+<div class="spotify-playlistsS" style="margin-top:17px;">
     <h2>Focus</h2>
+
+
     <div class="listL">
+            @foreach (var playlist in Model)
+            {
+                <div class="item">
+                    <img src="https://i.scdn.co/image/ab67616d0000b2733b5e11ca1b063583df9492db" />
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>@playlist.Name</h4>
+                    <p>@playlist.Description</p>
+                </div>
+            }
+
+
         <div class="item">
             <img src="https://i.scdn.co/image/ab67616d0000b2733b5e11ca1b063583df9492db" />
             <div class="play">
