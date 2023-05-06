@@ -13,6 +13,8 @@ namespace NotifyWebApp.Models
 
         public string Image { get; set; }
 
+        public string Description { get; set; }
+
         [Required]
         [ForeignKey("User")]
         public int User_ID { get; set; }
