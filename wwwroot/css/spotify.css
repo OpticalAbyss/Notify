@@ -18,9 +18,9 @@ body {
     padding: 24px;
 }
 
-    .sidebarS .logoL img {
-        width: 130px;
-    }
+.sidebarS .logoL img {
+    width: 130px;
+}
 
 .sidebarS .navigationN ul {
     list-style: none;
@@ -277,4 +277,10 @@ body {
     border: 0px;
     border-radius: 40px;
     cursor: pointer;
+}
+
+
+searchInput{
+    position: relative;
+    margin: 10px 10px 10px 10px;
 }

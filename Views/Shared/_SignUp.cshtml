@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - NotifyWebApp</title>
+    <title>@ViewData["Search"] - NotifyWebApp</title>
     <!--
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     -->
@@ -104,34 +104,40 @@
                 <button type="button" class="fa fas fa-chevron-right"></button>
             </div>
 
+
+            <div class="searchInput">
+                <input class="radius" type="text" placeholder="Type an Artist, Song, Lyrics">
+
+            </div>
+
             <div class="navbarN">
                 <ul>
                     <li>
-                        <a asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a>
+                        <a href="#">Sign Up</a>
                     </li>
                 </ul>
                 <button type="button">Log In</button>
             </div>
         </div>
 
-        
-    <div class="container">
+
+        <div class="container">
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>
-    </div>
+        </div>
 
-        
+
 
         <!-- Footer -->
-    <div class="previewP">
-        <div class="textT">
-            <h6>Preview of Spotify</h6>
-            <p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
-        </div>
-        <div class="buttonB">
-           <button type="button">Sign up free</button>
-        </div>
+        <div class="previewP">
+            <div class="textT">
+                <h6>Preview of Spotify</h6>
+                <p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
+            </div>
+            <div class="buttonB">
+                <button type="button">Sign up free</button>
+            </div>
         </div>
     </div>
 
