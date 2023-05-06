@@ -34,7 +34,6 @@ namespace NotifyWebApp.Controllers
                 ModelState.AddModelError("email", "Account with this Email already exists");
             }
 
-            data.Image = "Default";
             if(!ModelState.IsValid)
             {
                 return RedirectToAction("Index");

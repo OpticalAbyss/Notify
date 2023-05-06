@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NotifyWebApp.Data;
 using NotifyWebApp.Models;
 using System.Diagnostics;
 
@@ -6,16 +7,18 @@ namespace NotifyWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDBContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDBContext db)
         {
-            _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Playlist> PlayLists = _db.Playlists.ToList();
+            return View(PlayLists);
         }
 
         public IActionResult Privacy()
