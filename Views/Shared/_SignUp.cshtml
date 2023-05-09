@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Search"] - NotifyWebApp</title>
+    <title>@ViewData["Title"] - NotifyWebApp</title>
     <!--
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     -->
@@ -88,7 +88,7 @@
         <div class="policiesP">
             <ul>
                 <li>
-                    <a href="#">Cookies</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Cookies">Cookies</a>
                 </li>
                 <li>
                     <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -104,19 +104,22 @@
                 <button type="button" class="fa fas fa-chevron-right"></button>
             </div>
 
-
-            <div class="searchInput">
-                <input class="radius" type="text" placeholder="Type an Artist, Song, Lyrics">
-
+            <div class="searchBar">
+                <form>
+                    <input type="text" placeholder="What do you want to listen to?">
+                </form>
             </div>
 
             <div class="navbarN">
                 <ul>
                     <li>
-                        <a href="#">Sign Up</a>
+                        <a asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a>
                     </li>
                 </ul>
-                <button type="button">Log In</button>
+                <div>
+                    <button type="button"><a style="text-decoration:none" asp-controller="LogIn" asp-action="Index">Log In</a></button>
+
+                </div>
             </div>
         </div>
 
@@ -136,7 +139,7 @@
                 <p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
             </div>
             <div class="buttonB">
-                <button type="button">Sign up free</button>
+                <button type="button"><a style="text-decoration:none" asp-controller="SignUp" asp-action="Index">Sign up free</a></button>
             </div>
         </div>
     </div>

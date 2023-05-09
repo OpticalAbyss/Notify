@@ -1,8 +1,60 @@
 ﻿@{
     ViewData["Search"] = "Home Page";
-    Layout = "~/Views/Shared/_SignUp.cshtml";
-}
+    Layout = "~/Views/Shared/_SignUp.cshtml";}
+<style>
 
-<div class="text-center">
-    <h1 class="display-4">Search</h1>
-</div>>
+.mainCon{
+    padding:1%;
+    margin:1%;
+}
+</style>
+
+
+<div class="mainCon">
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="content">Rock</div>
+        </div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+    </div>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .grid-item {
+            border-radius: 10px;
+            width:200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .content {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 20px;
+            color: #fff;
+            font-size: 24px;
+        }
+
+    </style>
+
+    <script>
+        const gridItems = document.querySelectorAll('.grid-item');
+        gridItems.forEach(function (item) {
+            const gradient = `linear-gradient(to bottom right, rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 1), rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 1))`;
+            item.style.background = gradient;
+        });
+    </script>
+
+
+</div>

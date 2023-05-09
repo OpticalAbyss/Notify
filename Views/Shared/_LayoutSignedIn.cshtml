@@ -59,73 +59,33 @@
                 </li>
 
                 <li>
-                    <a href="#" onclick="libraryShow()">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">
                         <span class="fa fas fa-book"></span>
                         <span>Your Library</span>
                     </a>
                 </li>
-                <div class="popup-container" id="popupLibrary">
-                        <div style="margin:3%;">
-                            
-                            <button class="close-button" onclick="libraryShow()">Not Now</button>
-                            <button class="login-button"  >
-                                <a asp-controller="LogIn" asp-action="Index">Log In</a>
-                            </button>
-                            <h3>Enjoy You Library</h3>
-                            <div style="margin-top:5px;"></div>
-                            <p>Login to see your saved library</p>
-
-                        </div>
-                    </div>
             </ul>
         </div>
 
         <div class="navigationN">
             <ul>
                 <li>
-                    <a href="#" onclick="togglePopup()">
+                    <a asp-area="" asp-controller="User" asp-action="createPlaylist">
                         <span class="fa fas fa-plus-square"></span>
                         <span>Create Playlist</span>
                     </a>
-                    <div class="popup-container" id="popup">
-                        <div style="margin:3%;">
-                            
-                            <button class="close-button" onclick="togglePopup()">Not Now</button>
-                            <button class="login-button"  >
-                                <a asp-controller="LogIn" asp-action="Index">Log In</a>
-                            </button>
-                            <h3>Create a Playlist</h3>
-                            <div style="margin-top:5px;"></div>
-                            <p>Login to Create Playlists.</p>
-
-                        </div>
-                    </div>
-
                 </li>
 
                 <li>
-                    <a href="#" onclick="likedShow()">
+                    <a asp-area="" asp-controller="User" asp-action="showSongs">
                         <span class="fa fas fa-heart"></span>
                         <span>Liked Songs</span>
                     </a>
-
-                    <div class="popup-container" id="popupLiked" style="">
-                        <div style="margin:3%;">
-                            
-                            <button class="close-button" onclick="likedShow()">Not Now</button>
-                            <button class="login-button"  >
-                                <a asp-controller="LogIn" asp-action="Index">Log In</a>
-                            </button>
-                            <h3>Enjoy Your Liked Songs</h3>
-                            <div style="margin-top:5px;"></div>
-                            <p>Login to See all the songs you've liked in one easy Playlist.</p>
-
-                        </div>
                 </li>
             </ul>
         </div>
 
-        <div class="policiesP">
+        <div class="policiesP" style="bottom:10px;">
             <ul>
                 <li>
                     <a asp-area="" asp-controller="Home" asp-action="Cookies">Cookies</a>
@@ -144,41 +104,29 @@
                 <button type="button" class="fa fas fa-chevron-right"></button>
             </div>
 
-            <div class="navbarN">
-                <ul>
-                    <li>
-                        <a asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a>
-                    </li>
-                </ul>
-                <div>
-                    <button type="button"><a style="text-decoration:none" asp-controller="LogIn" asp-action="Index">Log In</a></button>
-
+            <div class="drop-box">
+                Click me
+                <div class="dropdown">
+                  <a href="#">Account Settings</a>
+                  <a href="#">Log Out</a>
                 </div>
-            </div>
-        </div>
+             </div>
+        
+         </div>
 
         
-    <div class="container">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
+        <div class="container">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+        </div>
+
+        <!-- Footer / StreamBar -->
+
+            
+
     </div>
 
-        
-
-        <!-- Footer -->
-    <div class="previewP">
-        <div class="textT">
-            <h6>Preview of Spotify</h6>
-            <p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
-        </div>
-        <div class="buttonB">
-                <button type="button"><a style="text-decoration:none" asp-controller="SignUp" asp-action="Index">Sign up free</a></button>
-        </div>
-        </div>
-    </div>
-
-    <script src="~/js/scripts.js"></script>
     <script src="https://kit.fontawesome.com/23cecef777.js" crossorigin="anonymous"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

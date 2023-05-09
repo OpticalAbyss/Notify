@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NotifyWebApp.Data;
 using NotifyWebApp.Models;
 
@@ -13,13 +14,16 @@ namespace NotifyWebApp.Controllers
             _db = db;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            User user = new User();
+            return View(user);
         }
 
-
         [HttpPost]
+        [Authorize]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public IActionResult Validate(User data)
         {
@@ -37,7 +41,15 @@ namespace NotifyWebApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            return RedirectToAction("Index", "Home" , data/*data*/);
+            User logInEr = _db.Users.Where(entry => entry.Email == data.Email).FirstOrDefault();
+
+            if(logInEr.isAdmin)
+            {
+                return RedirectToAction("Index", "Admin" , logInEr/*data*/);
+
+            }
+
+            return RedirectToAction("Index", "User" , logInEr/*data*/);
         }
     }
 }

@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["User"] = "Home Page";
+    Layout = "~/Views/Shared/_LayoutSignedIn.cshtml";
+}
+@model IEnumerable<Playlist>
+
+<div style="padding:1%; margin:1%;">
+
+<div class="spotify-playlistsS">
+    <h2>My Playlists</h2>
+
+    <div class="listL">
+            @foreach (var playlist in Model)
+            {
+                <div class="item">
+                    <img src="https://i.scdn.co/image/ab67616d0000b2733b5e11ca1b063583df9492db" />
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>@playlist.Name</h4>
+                    <p>@playlist.Description</p>
+                </div>
+            }
+        <div class="item">
+            <img src="https://i.scdn.co/image/ab67616d0000b2733b5e11ca1b063583df9492db" />
+            <div class="play">
+                <span class="fa fa-play"></span>
+            </div>
+            <h4>Today's Top Hits</h4>
+            <p>Rema & Selena Gomez are on top of the...</p>
+        </div>
+
+       
+    </div>
+</div>
+
+
+
+</div>

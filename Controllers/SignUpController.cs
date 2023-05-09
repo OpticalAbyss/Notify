@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using NotifyWebApp.Data;
 using NotifyWebApp.Models;
@@ -22,6 +23,7 @@ namespace NotifyWebApp.Controllers
 
 
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public IActionResult Submit(User data)
         { 

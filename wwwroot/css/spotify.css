@@ -280,7 +280,106 @@ body {
 }
 
 
-searchInput{
+input[type="text"] {
+    border: none;
+    border-radius: 20px;
+    padding: 13px;
+    width: 220px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    outline: none;
+    position: absolute;
+    left: 380px;
+}
+.popup-container {
+    color:white;
+    display: none;
+    position: absolute;
+    top: 220px;
+    left: 170px;
+    width: 300px;
+    height: 120px;
+    background-color: #0091E7;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+
+.close-button {
+    color: black;
+    position: absolute;
+    bottom: 10px;
+    right: 75px;
+    border: none;
+    background-color: #0091E7;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .close-button:hover {
+        background-color: #0091ff;
+    }
+
+.login-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color:black;
+    border: none;
+    background-color: #FFFFFF;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+    .login-button:hover {
+        background-color: #7a7a7a;
+    }
+
+#popupLiked {
+    top: 250px;
+}
+
+#popupLibrary {
+    top: 170px;
+}
+
+.drop-box {
+    color: grey;
     position: relative;
-    margin: 10px 10px 10px 10px;
+    display: inline-block;
+    padding: 10px;
+    width:auto;
+    border-radius: 20px;
+    background-color: #090909;
+    cursor: pointer;
+}
+    .drop-box a {
+        display: block;
+        padding: 5px;
+        color: #000;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+        .drop-box a:hover {
+            background-color: #101010;
+        }
+
+.dropdown {
+    width: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #101010;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    z-index: 999;
+}
+
+.drop-box:hover .dropdown {
+    display: block;
 }
