@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Home Page";
+    var count = 0;
 }
 
 <div style="padding:1%; margin:1%;">
@@ -12,26 +13,25 @@
     <div class="listL">
             @foreach (var playlist in Model)
             {
-                if (playlist.User_ID == 0)
+                if (playlist.User_ID == 4)
                 {
                     <div class="item">
-                        <img src="https://i.scdn.co/image/ab67616d0000b2733b5e11ca1b063583df9492db" />
+                        <img src="@playlist.Image" />
                         <div class="play">
                             <span class="fa fa-play"></span>
                         </div>
                         <h4>@playlist.Name</h4>
                         <p>@playlist.Description</p>
                     </div>
+                    count++;
+                }
+                if (count == 8)
+                {
+                    count = 0;
+                    break;
                 }
             }
-        <div class="item">
-            <img src="https://i.scdn.co/image/ab67616d0000b2733b5e11ca1b063583df9492db" />
-            <div class="play">
-                <span class="fa fa-play"></span>
-            </div>
-            <h4>Today's Top Hits</h4>
-            <p>Rema & Selena Gomez are on top of the...</p>
-        </div>
+        
 
        
     </div>
@@ -44,16 +44,21 @@
     <div class="listL">
             @foreach (var playlist in Model)
             {
-                if(playlist.User_ID != 0)
+                if(playlist.User_ID != 4)
                 {
                     <div class="item">
-                        <img src="https://i.scdn.co/image/ab67616d0000b2733b5e11ca1b063583df9492db" />
+                        <img src="@playlist.Image" />
                         <div class="play">
                             <span class="fa fa-play"></span>
                         </div>
                         <h4>@playlist.Name</h4>
                         <p>@playlist.Description</p>
                     </div>
+                }
+                if (count == 8)
+                {
+                    count = 0;
+                    break;
                 }
             }
 
